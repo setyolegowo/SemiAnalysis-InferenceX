@@ -78,6 +78,7 @@ jobs:
                         contains(github.event.pull_request.labels.*.name, 'sweep-enabled')
                       }}
               run: |
+                  set -x
                   pip install pydantic
 
                   if [ "${{ github.event_name }}" == "pull_request" ]; then
